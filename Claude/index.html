@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Recetario Casero — Catálogo de recetas</title>
+  <link rel="stylesheet" href="estilosIA.css" />
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1 class="encabezado__titulo">🍽️ Recetario Casero</h1>
+    <p class="encabezado__subtitulo">Recetas dulces y saladas para disfrutar en casa</p>
+  </header>
+
+  <nav class="nav">
+    <ul class="nav__lista">
+      <li><a class="nav__enlace nav__enlace--activo" href="index.html">Catálogo de recetas</a></li>
+      <li><a class="nav__enlace" href="sobre-el-sitio.html">Quién mantiene el sitio</a></li>
+      <li><a class="nav__enlace" href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="seccion-intro">
+      <h2>Elegí una categoría</h2>
+      <p>Filtrá las recetas por tipo. La selección se hace sin necesidad de JavaScript, usando únicamente HTML y CSS.</p>
+    </section>
+
+    <!-- Selector de categoría con radio buttons (interacción 100% CSS) -->
+    <input type="radio" name="categoria" id="cat-todas" class="radio-filtro" checked>
+    <input type="radio" name="categoria" id="cat-dulce" class="radio-filtro">
+    <input type="radio" name="categoria" id="cat-salado" class="radio-filtro">
+
+    <div class="filtro-categoria">
+      <label for="cat-todas">Todas las recetas</label>
+      <label for="cat-dulce">🍰 Dulce</label>
+      <label for="cat-salado">🧂 Salado</label>
+    </div>
+
+    <div class="recetario">
+
+      <!-- ===================== CATEGORÍA DULCE ===================== -->
+      <section class="grupo-recetas grupo-dulce">
+        <h3 class="grupo-recetas__titulo">Recetas dulces</h3>
+        <div class="grid-recetas">
+
+          <article class="tarjeta-receta tarjeta-receta--dulce">
+            <img class="tarjeta-receta__imagen" src="imagenes/receta1.png" alt="Tarta de manzana recién horneada">
+            <div class="tarjeta-receta__cuerpo">
+              <span class="tarjeta-receta__etiqueta">Dulce</span>
+              <h4 class="tarjeta-receta__nombre">Tarta de manzana</h4>
+              <p>Masa crocante, manzanas caramelizadas y un toque de canela.</p>
+              <a class="tarjeta-receta__descarga" href="recetarios/receta1.pdf" download>⬇ Descargar receta en PDF</a>
+            </div>
+          </article>
+
+          <article class="tarjeta-receta tarjeta-receta--dulce">
+            <img class="tarjeta-receta__imagen" src="imagenes/receta2.png" alt="Brownies de chocolate">
+            <div class="tarjeta-receta__cuerpo">
+              <span class="tarjeta-receta__etiqueta">Dulce</span>
+              <h4 class="tarjeta-receta__nombre">Brownies de chocolate</h4>
+              <p>Húmedos y bien chocolatosos, con nueces opcionales.</p>
+              <a class="tarjeta-receta__descarga" href="recetarios/receta2.pdf" download>⬇ Descargar receta en PDF</a>
+            </div>
+          </article>
+
+          <article class="tarjeta-receta tarjeta-receta--dulce">
+            <img class="tarjeta-receta__imagen" src="imagenes/receta3.png" alt="Flan casero con caramelo">
+            <div class="tarjeta-receta__cuerpo">
+              <span class="tarjeta-receta__etiqueta">Dulce</span>
+              <h4 class="tarjeta-receta__nombre">Flan casero</h4>
+              <p>Clásico flan de huevo con caramelo, suave y cremoso.</p>
+              <a class="tarjeta-receta__descarga" href="recetarios/receta3.pdf" download>⬇ Descargar receta en PDF</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ===================== CATEGORÍA SALADO ===================== -->
+      <section class="grupo-recetas grupo-salado">
+        <h3 class="grupo-recetas__titulo">Recetas saladas</h3>
+        <div class="grid-recetas">
+
+          <article class="tarjeta-receta tarjeta-receta--salado">
+            <img class="tarjeta-receta__imagen" src="imagenes/receta4.png" alt="Empanadas de carne">
+            <div class="tarjeta-receta__cuerpo">
+              <span class="tarjeta-receta__etiqueta">Salado</span>
+              <h4 class="tarjeta-receta__nombre">Empanadas de carne</h4>
+              <p>Relleno jugoso con huevo y aceituna, al horno o fritas.</p>
+              <a class="tarjeta-receta__descarga" href="recetarios/receta4.pdf" download>⬇ Descargar receta en PDF</a>
+            </div>
+          </article>
+
+          <article class="tarjeta-receta tarjeta-receta--salado">
+            <img class="tarjeta-receta__imagen" src="imagenes/receta5.png" alt="Tarta de verduras">
+            <div class="tarjeta-receta__cuerpo">
+              <span class="tarjeta-receta__etiqueta">Salado</span>
+              <h4 class="tarjeta-receta__nombre">Tarta de verduras</h4>
+              <p>Acelga, cebolla y queso entre dos discos de masa dorada.</p>
+              <a class="tarjeta-receta__descarga" href="recetarios/receta5.pdf" download>⬇ Descargar receta en PDF</a>
+            </div>
+          </article>
+
+          <article class="tarjeta-receta tarjeta-receta--salado">
+            <img class="tarjeta-receta__imagen" src="imagenes/receta6.png" alt="Milanesas napolitanas gratinadas">
+            <div class="tarjeta-receta__cuerpo">
+              <span class="tarjeta-receta__etiqueta">Salado</span>
+              <h4 class="tarjeta-receta__nombre">Milanesas napolitanas</h4>
+              <p>Con salsa, jamón y mozzarella gratinada al horno.</p>
+              <a class="tarjeta-receta__descarga" href="recetarios/receta6.pdf" download>⬇ Descargar receta en PDF</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer class="pie">
+    <p>Recetario Casero © 2026 — Sitio estático hecho con HTML y CSS, sin scripts.</p>
+  </footer>
+
+</body>
+</html>

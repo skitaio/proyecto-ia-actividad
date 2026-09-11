@@ -1,0 +1,493 @@
+/* =========================================================
+   estilosIA.css
+   Sitio de recetas — paleta cálida y estilo limpio
+   ========================================================= */
+
+:root {
+  --color-fondo: #fbf3e7;
+  --color-fondo-alt: #f5e6d0;
+  --color-texto: #3d2b1f;
+  --color-texto-suave: #6b5442;
+  --color-marron: #7a3b1e;
+  --color-marron-oscuro: #4a2412;
+  --color-naranja: #c9702f;
+  --color-naranja-claro: #e9a25b;
+  --color-verde: #7a9558;
+  --color-crema: #fffaf1;
+  --borde-suave: #e3c9a3;
+  --sombra: 0 6px 18px rgba(74, 36, 18, 0.12);
+  --radio: 14px;
+  --fuente-titulos: Georgia, "Times New Roman", serif;
+  --fuente-texto: "Segoe UI", Verdana, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--fuente-texto);
+  color: var(--color-texto);
+  background-color: var(--color-fondo);
+  background-image:
+    radial-gradient(circle at top left, #fff6e9 0%, transparent 45%),
+    radial-gradient(circle at bottom right, #f7e2c4 0%, transparent 50%);
+  line-height: 1.55;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-naranja);
+  text-decoration: none;
+}
+
+a:hover,
+a:focus {
+  color: var(--color-marron-oscuro);
+  text-decoration: underline;
+}
+
+/* ---------- Encabezado ---------- */
+
+.encabezado {
+  background: linear-gradient(135deg, var(--color-marron) 0%, var(--color-naranja) 100%);
+  color: var(--color-crema);
+  padding: 2rem 1.5rem 1.4rem;
+  text-align: center;
+  box-shadow: var(--sombra);
+}
+
+.encabezado__titulo {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  letter-spacing: 0.5px;
+}
+
+.encabezado__subtitulo {
+  margin: 0.4rem 0 0;
+  font-size: 1rem;
+  font-style: italic;
+  color: #fce9d2;
+}
+
+/* ---------- Navegación ---------- */
+
+.nav {
+  background-color: var(--color-marron-oscuro);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+}
+
+.nav__lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.nav__lista li {
+  border-right: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.nav__lista li:last-child {
+  border-right: none;
+}
+
+.nav__enlace {
+  display: block;
+  padding: 0.9rem 1.4rem;
+  color: #f6e3c8;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+  font-size: 0.95rem;
+}
+
+.nav__enlace:hover,
+.nav__enlace:focus,
+.nav__enlace--activo {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  text-decoration: none;
+}
+
+/* ---------- Estructura general ---------- */
+
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.4rem 3.5rem;
+}
+
+.seccion-intro {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 2rem;
+}
+
+.seccion-intro h2 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-marron);
+  font-size: 1.7rem;
+  margin-bottom: 0.4rem;
+}
+
+.seccion-intro p {
+  color: var(--color-texto-suave);
+}
+
+/* ---------- Filtro de categorías (CSS puro, sin scripts) ---------- */
+
+.filtro-categoria {
+  display: flex;
+  justify-content: center;
+  gap: 0.7rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.2rem;
+}
+
+.radio-filtro {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  pointer-events: none;
+}
+
+.filtro-categoria label {
+  cursor: pointer;
+  padding: 0.6rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid var(--color-naranja-claro);
+  background-color: var(--color-crema);
+  color: var(--color-marron);
+  font-weight: 600;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  user-select: none;
+}
+
+.filtro-categoria label:hover {
+  transform: translateY(-2px);
+  background-color: #fff1dc;
+}
+
+#cat-todas:focus-visible ~ .filtro-categoria label[for="cat-todas"],
+#cat-dulce:focus-visible ~ .filtro-categoria label[for="cat-dulce"],
+#cat-salado:focus-visible ~ .filtro-categoria label[for="cat-salado"] {
+  outline: 3px solid var(--color-naranja);
+  outline-offset: 2px;
+}
+
+#cat-todas:checked ~ .filtro-categoria label[for="cat-todas"],
+#cat-dulce:checked ~ .filtro-categoria label[for="cat-dulce"],
+#cat-salado:checked ~ .filtro-categoria label[for="cat-salado"] {
+  background-color: var(--color-naranja);
+  border-color: var(--color-naranja);
+  color: #ffffff;
+}
+
+/* Mostrar/ocultar grupos de recetas según el radio button activo */
+
+.recetario .grupo-recetas {
+  display: none;
+}
+
+#cat-todas:checked ~ .recetario .grupo-recetas {
+  display: block;
+}
+
+#cat-dulce:checked ~ .recetario .grupo-dulce {
+  display: block;
+}
+
+#cat-salado:checked ~ .recetario .grupo-salado {
+  display: block;
+}
+
+.grupo-recetas__titulo {
+  font-family: var(--fuente-titulos);
+  color: var(--color-marron);
+  font-size: 1.5rem;
+  border-bottom: 3px solid var(--color-naranja-claro);
+  padding-bottom: 0.4rem;
+  margin: 2rem 0 1.4rem;
+}
+
+.grupo-recetas:first-of-type .grupo-recetas__titulo {
+  margin-top: 0;
+}
+
+/* ---------- Grilla y tarjetas de recetas ---------- */
+
+.grid-recetas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.6rem;
+}
+
+.tarjeta-receta {
+  background-color: var(--color-crema);
+  border: 2px solid var(--borde-suave);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tarjeta-receta:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(74, 36, 18, 0.18);
+}
+
+.tarjeta-receta__imagen {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-bottom: 4px solid var(--color-naranja-claro);
+}
+
+.tarjeta-receta__cuerpo {
+  padding: 1.1rem 1.2rem 1.3rem;
+  background-color: #fffdf8;
+  border-top: 1px dashed var(--borde-suave);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.tarjeta-receta__nombre {
+  margin: 0;
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  color: var(--color-marron-oscuro);
+}
+
+.tarjeta-receta__etiqueta {
+  align-self: flex-start;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  color: #fff;
+}
+
+.tarjeta-receta--dulce .tarjeta-receta__etiqueta {
+  background-color: var(--color-naranja);
+}
+
+.tarjeta-receta--salado .tarjeta-receta__etiqueta {
+  background-color: var(--color-verde);
+}
+
+.tarjeta-receta__descarga {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  background-color: var(--color-marron);
+  color: #fff9ef;
+  padding: 0.55rem 1rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.tarjeta-receta__descarga:hover,
+.tarjeta-receta__descarga:focus {
+  background-color: var(--color-marron-oscuro);
+  text-decoration: none;
+  color: #ffffff;
+}
+
+/* ---------- Página "Sobre el sitio" ---------- */
+
+.tarjeta-info {
+  background-color: var(--color-crema);
+  border: 2px solid var(--borde-suave);
+  border-radius: var(--radio);
+  padding: 1.8rem 2rem;
+  box-shadow: var(--sombra);
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.tarjeta-info h2 {
+  font-family: var(--fuente-titulos);
+  color: var(--color-marron);
+  margin-top: 0;
+}
+
+.tarjeta-info__foto {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 4px solid var(--color-naranja-claro);
+  margin: 0 auto 1rem;
+  object-fit: cover;
+}
+
+.lista-valores {
+  padding-left: 1.2rem;
+}
+
+.lista-valores li {
+  margin-bottom: 0.4rem;
+}
+
+/* ---------- Página de contacto ---------- */
+
+.formulario-contacto {
+  background-color: var(--color-crema);
+  border: 2px solid var(--borde-suave);
+  border-radius: var(--radio);
+  padding: 1.8rem 2rem 2.2rem;
+  box-shadow: var(--sombra);
+  max-width: 560px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.formulario-contacto__campo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.formulario-contacto label {
+  font-weight: 600;
+  color: var(--color-marron);
+}
+
+.formulario-contacto input,
+.formulario-contacto textarea,
+.formulario-contacto select {
+  padding: 0.65rem 0.8rem;
+  border: 2px solid var(--borde-suave);
+  border-radius: 8px;
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #fffdf9;
+  color: var(--color-texto);
+}
+
+.formulario-contacto input:focus,
+.formulario-contacto textarea:focus,
+.formulario-contacto select:focus {
+  outline: none;
+  border-color: var(--color-naranja);
+}
+
+.formulario-contacto textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.formulario-contacto__radios {
+  display: flex;
+  gap: 1.4rem;
+  flex-wrap: wrap;
+}
+
+.formulario-contacto__radios label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 500;
+  color: var(--color-texto);
+}
+
+.formulario-contacto button {
+  align-self: flex-start;
+  background-color: var(--color-naranja);
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.8rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.formulario-contacto button:hover {
+  background-color: var(--color-marron);
+}
+
+.datos-contacto {
+  max-width: 560px;
+  margin: 0 auto 2rem;
+  text-align: center;
+  color: var(--color-texto-suave);
+}
+
+.datos-contacto strong {
+  color: var(--color-marron);
+}
+
+/* ---------- Pie de página ---------- */
+
+.pie {
+  background-color: var(--color-marron-oscuro);
+  color: #e9d4b8;
+  text-align: center;
+  padding: 1.6rem 1rem;
+  font-size: 0.9rem;
+}
+
+.pie a {
+  color: #f6c98b;
+}
+
+/* ---------- Responsivo ---------- */
+
+@media (max-width: 640px) {
+  .nav__lista {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .nav__lista li {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    width: 100%;
+    text-align: center;
+  }
+
+  .tarjeta-info {
+    padding: 1.4rem 1.2rem;
+  }
+
+  .formulario-contacto {
+    padding: 1.4rem 1.2rem 1.8rem;
+  }
+
+  .filtro-categoria {
+    gap: 0.5rem;
+  }
+
+  .filtro-categoria label {
+    padding: 0.55rem 1rem;
+    font-size: 0.9rem;
+  }
+}

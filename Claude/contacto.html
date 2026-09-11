@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contacto — Recetario Casero</title>
+  <link rel="stylesheet" href="estilosIA.css" />
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1 class="encabezado__titulo">🍽️ Recetario Casero</h1>
+    <p class="encabezado__subtitulo">Recetas dulces y saladas para disfrutar en casa</p>
+  </header>
+
+  <nav class="nav">
+    <ul class="nav__lista">
+      <li><a class="nav__enlace" href="index.html">Catálogo de recetas</a></li>
+      <li><a class="nav__enlace" href="sobre-el-sitio.html">Quién mantiene el sitio</a></li>
+      <li><a class="nav__enlace nav__enlace--activo" href="contacto.html">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section class="seccion-intro">
+      <h2>Contacto</h2>
+      <p>¿Tenés dudas, sugerencias o querés compartir tu propia receta? Escribinos.</p>
+    </section>
+
+    <p class="datos-contacto">
+      <strong>Correo:</strong> hola@recetariocasero.example &nbsp;·&nbsp;
+      <strong>Instagram:</strong> @recetario.casero
+    </p>
+
+    <!-- Formulario simple, sin scripts ni backend real -->
+    <form class="formulario-contacto" action="#" method="post">
+
+      <div class="formulario-contacto__campo">
+        <label for="nombre">Nombre y apellido</label>
+        <input type="text" id="nombre" name="nombre" placeholder="Ej: Ana Gómez" required>
+      </div>
+
+      <div class="formulario-contacto__campo">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+      </div>
+
+      <div class="formulario-contacto__campo">
+        <label>Motivo de la consulta</label>
+        <div class="formulario-contacto__radios">
+          <label><input type="radio" name="motivo" value="sugerencia" checked> Sugerencia</label>
+          <label><input type="radio" name="motivo" value="receta"> Enviar una receta</label>
+          <label><input type="radio" name="motivo" value="otro"> Otro</label>
+        </div>
+      </div>
+
+      <div class="formulario-contacto__campo">
+        <label for="mensaje">Mensaje</label>
+        <textarea id="mensaje" name="mensaje" placeholder="Contanos en qué te podemos ayudar..." required></textarea>
+      </div>
+
+      <button type="submit">Enviar mensaje</button>
+    </form>
+  </main>
+
+  <footer class="pie">
+    <p>Recetario Casero © 2026 — Sitio estático hecho con HTML y CSS, sin scripts.</p>
+  </footer>
+
+</body>
+</html>

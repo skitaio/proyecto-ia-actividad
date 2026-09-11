@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Recetas dulces y saladas para cocinar en casa.">
+  <title>Sabores de casa | Recetario</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23A63D2F'/%3E%3Cpath d='M17 31c0-11 6-17 15-17s15 6 15 17v16H17V31Z' fill='%23FFF5E9'/%3E%3Cpath d='M24 26c3-5 13-5 16 0M23 38h18' fill='none' stroke='%23D97A50' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="estilosIA.css">
+</head>
+<body>
+  <header class="encabezado">
+    <a class="marca" href="#inicio" aria-label="Ir al inicio">
+      <span class="marca-icono" aria-hidden="true">S</span>
+      <span>Sabores de casa</span>
+    </a>
+    <nav aria-label="Navegación principal">
+      <a href="#catalogo">Recetas</a>
+      <a href="#quien-soy">Quién mantiene el sitio</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+  </header>
+
+  <main id="inicio">
+    <section class="presentacion" aria-labelledby="titulo-principal">
+      <div>
+        <p class="etiqueta">Recetario casero</p>
+        <h1 id="titulo-principal">Cocinar rico también puede ser simple.</h1>
+        <p>Seis recetas explicadas paso a paso para llenar la mesa de algo dulce, salado y hecho con cariño.</p>
+      </div>
+      <div class="sello" aria-hidden="true"><span>6</span> recetas para compartir</div>
+    </section>
+
+    <section id="catalogo" class="catalogo" aria-labelledby="titulo-catalogo">
+      <div class="titulo-seccion">
+        <div>
+          <p class="etiqueta">Elegí tu antojo</p>
+          <h2 id="titulo-catalogo">Catálogo de recetas</h2>
+        </div>
+        <p>Seleccioná una categoría para ver solo las recetas que te interesan.</p>
+      </div>
+
+      <input class="filtro-input" type="radio" name="categoria" id="todas" checked>
+      <input class="filtro-input" type="radio" name="categoria" id="dulces">
+      <input class="filtro-input" type="radio" name="categoria" id="saladas">
+      <div class="filtros" role="group" aria-label="Filtrar recetas por categoría">
+        <label for="todas">Todas</label>
+        <label for="dulces">Dulces</label>
+        <label for="saladas">Saladas</label>
+      </div>
+
+      <div class="grilla-recetas">
+        <article class="receta dulce">
+          <img src="imagenes/receta1.png" alt="Brownies de chocolate cortados en cuadrados">
+          <div class="receta-contenido"><span class="categoria">Dulce</span><h3>Brownies intensos</h3><p>Húmedos por dentro, con una fina capa crocante.</p><a href="recetarios/receta1.pdf" download>Descargar receta en PDF <span aria-hidden="true">↓</span></a></div>
+        </article>
+        <article class="receta dulce">
+          <img src="imagenes/receta2.png" alt="Tarta de limón decorada sobre un plato">
+          <div class="receta-contenido"><span class="categoria">Dulce</span><h3>Tarta de limón</h3><p>Fresca, cremosa y con una base delicadamente crocante.</p><a href="recetarios/receta2.pdf" download>Descargar receta en PDF <span aria-hidden="true">↓</span></a></div>
+        </article>
+        <article class="receta dulce">
+          <img src="imagenes/receta3.png" alt="Alfajores rellenos con dulce de leche">
+          <div class="receta-contenido"><span class="categoria">Dulce</span><h3>Alfajores de maicena</h3><p>Suaves, abundantes y rellenos con dulce de leche.</p><a href="recetarios/receta3.pdf" download>Descargar receta en PDF <span aria-hidden="true">↓</span></a></div>
+        </article>
+        <article class="receta salada">
+          <img src="imagenes/receta4.png" alt="Tarta salada de espinaca y ricota">
+          <div class="receta-contenido"><span class="categoria">Salado</span><h3>Tarta de espinaca</h3><p>Un relleno cremoso de ricota, espinaca y queso.</p><a href="recetarios/receta4.pdf" download>Descargar receta en PDF <span aria-hidden="true">↓</span></a></div>
+        </article>
+        <article class="receta salada">
+          <img src="imagenes/receta5.png" alt="Sopa crema de zapallo servida en un cuenco">
+          <div class="receta-contenido"><span class="categoria">Salado</span><h3>Crema de zapallo</h3><p>Suave, calentita y perfecta para los días frescos.</p><a href="recetarios/receta5.pdf" download>Descargar receta en PDF <span aria-hidden="true">↓</span></a></div>
+        </article>
+        <article class="receta salada">
+          <img src="imagenes/receta6.png" alt="Scones dorados de queso y hierbas">
+          <div class="receta-contenido"><span class="categoria">Salado</span><h3>Scones de queso</h3><p>Tiernos, dorados y listos para acompañar el mate.</p><a href="recetarios/receta6.pdf" download>Descargar receta en PDF <span aria-hidden="true">↓</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section id="quien-soy" class="sobre-mi" aria-labelledby="titulo-sobre-mi">
+      <div class="monograma" aria-hidden="true">A</div>
+      <div><p class="etiqueta">Detrás del recetario</p><h2 id="titulo-sobre-mi">Hola, soy Angie</h2><p>Mantengo este pequeño rincón para compartir recetas caseras, claras y posibles. Me gusta que cada preparación tenga instrucciones sencillas y un resultado que invite a sentarse a la mesa.</p></div>
+    </section>
+
+    <section id="contacto" class="contacto" aria-labelledby="titulo-contacto">
+      <div><p class="etiqueta">¿Hablamos?</p><h2 id="titulo-contacto">Información de contacto</h2><p>Podés enviar una consulta, sugerir una receta o contarme cómo te salió.</p></div>
+      <form action="#" method="get">
+        <label for="nombre">Nombre</label><input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <label for="correo">Correo electrónico</label><input type="email" id="correo" name="correo" placeholder="nombre@correo.com" required>
+        <label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribí tu mensaje..." required></textarea>
+        <button type="submit">Enviar mensaje</button>
+      </form>
+    </section>
+  </main>
+  <footer><p>Sabores de casa · Recetas para compartir</p><a href="#inicio">Volver arriba ↑</a></footer>
+</body>
+</html>

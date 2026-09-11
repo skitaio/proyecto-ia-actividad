@@ -1,0 +1,22 @@
+¡Hola! Necesito que me generes un sitio web estático (sin scripts) responsivo,
+se basa en publicar recetas de cocina que contienen dos categorías: dulce y salado.
+Solo generado con HTML Y CSS, las reglas del estilo deben estar
+en un archivo separado denominado "estilosIA.css".
+Se debe mostrar una barra de navegación con enlaces a:
+- Información de contacto (formulario simple)
+- Información de quien mantiene el sitio.
+- Catálogo de recetas agrupadas en las dos categorías mencionadas.
+Se debe trabajar con al menos 3 recetas por categoría.
+los archivos deben estar organizados en un directorio llamado "imágenes"
+(fotos en formato png) y un directorio denominado "recetarios"
+(con PDFs explicativos).
+Por cada receta mostrada en la página, hay dos archivos:
+uno denominado "receta1.png" con la imagen correspondiente a la receta
+otro denominado "receta1.pdf" con la receta.
+En cuanto a la decoración y estilo, prefiero algo cálido y visualmente limpio.
+En cada receta se debe mostrar un recuadro con borde y relleno específicos de manera
+armónica. Se debe incluir el nombre de la receta y el enlace para descargar la receta
+completa en PDF.
+En cuanto a la interacción con el sitio, se debe poder elegir una categoría mediante una lista 
+desplegable o radio buttons y, al seleccionarla, mostrar las recetas correspondientes en la zona 
+central de la página, siempre de forma estática y sin utilizar scripts.
